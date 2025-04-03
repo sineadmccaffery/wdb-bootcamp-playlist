@@ -1,6 +1,16 @@
+import Link from 'next/link';
 
-export default function Button() {
+interface ButtonProps {
+    text: String;
+
+}
+
+export default function Button({text} : ButtonProps) {
     return (
-        <button className="bg-green-500 hover:bg-green-600 rounded-sm p-3 text-white font-semibold font-md">Go to playlists</button>
+        <Link href="/playlists">
+            <div className="bg-green-500 hover:bg-green-600 rounded-sm p-3 text-white font-semibold font-md">
+                {text}
+            </div>
+        </Link>
     )
 }
